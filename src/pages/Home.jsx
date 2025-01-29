@@ -3,7 +3,7 @@ import {motion} from "framer-motion"
 import JobList from '../components/JobList';
 
 const Home = () => {
-    const apiUrl = "https://create-job-frontend.vercel.app/api/jobs/alljobs";
+    const apiUrl = "https://create-jobs-backend.vercel.app/api/jobs/alljobs";
 
 
 
