@@ -89,25 +89,28 @@ const CompanyDashboard = () => {
                 <div>
                     <h5 className=" px-3 font-semibold text-xl text-gray-500">Active Jobs:</h5>
                 </div>
-                <ul className="grid  gap-5  ">
-                    {jobs.map((job) => (
-                        <div className=" shadow-xl rounded-md py-5 px-5 flex justify-between items-center " key={job._id}>
-                            <li className="space-y-1" >
-                                <h3 className="text-2xl font-semibold text-gray-700">{job.title}</h3>
-                                <p className="text-gray-500 text-sm font-semibold">{job.description}</p>
-                                <p className="text-sm font-semibold text-gray-500">Experience Level: <span className="text-gray-800">{job.experienceLevel}</span> </p>
-                                <p className="text-sm ">End Date: {job.endDate}</p>
-
-                            </li>
-                            <div>
-
+                {jobs.length === 0 ? (
+                    <div className="text-center text-gray-500 mt-5">No jobs posted yet.</div>
+                ) : (
+                    <ul className="grid gap-5">
+                        {jobs.map((job) => (
+                            <div className="shadow-xl rounded-md py-5 px-5 flex justify-between items-center" key={job._id}>
+                                <li className="space-y-1">
+                                    <h3 className="text-2xl font-semibold text-gray-700">{job.title}</h3>
+                                    <p className="text-gray-500 text-sm font-semibold">{job.description}</p>
+                                    <p className="text-sm font-semibold text-gray-500">Experience Level: 
+                                        <span className="text-gray-800"> {job.experienceLevel}</span>
+                                    </p>
+                                    <p className="text-sm">End Date: {job.endDate}</p>
+                                </li>
                                 <button
                                     className="flex cursor-pointer text-xs justify-center items-center rounded h-8 w-24 shadow-md text-white font-semibold bg-gradient-to-r from-purple-500 via-purple-700 to-purple-900"
-                                    onClick={() => handleDeleteJob(job._id)}>Delete Post</button>
+                                    onClick={() => handleDeleteJob(job._id)}
+                                >Delete Post</button>
                             </div>
-                        </div>
-                    ))}
-                </ul>
+                        ))}
+                    </ul>
+                )}
             </div>
 
 
