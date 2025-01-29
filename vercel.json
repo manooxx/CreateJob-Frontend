@@ -1,0 +1,17 @@
+{
+    "rewrites": [
+      {
+        "source": "/verify-email/:token",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/companyDashboard",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/createJob",
+        "destination": "/index.html"
+      }
+    ]
+  }
+  
