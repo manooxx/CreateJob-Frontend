@@ -34,15 +34,15 @@ const Navbar = () => {
     return (
         <div className='w-full h-20 shadow-xl'>
             <div className='p-4 h-20 w-[80%] mx-auto  flex justify-between items-center '>
-            <div className='w-12 h-12 '>
+            <div className='w-12 h-12 hidden md:block '>
                 <img src="https://cdn.pixabay.com/photo/2023/03/06/13/58/logo-7833520_1280.png" alt="" />
             </div>
 
 <div>
     <ul className='flex justify-between items-center gap-8 text-gray-700'>
-        <li className='cursor-pointer hover:underline duration-300 hover:text-purple-900 text-lg font-medium'><Link to="/">Jobs</Link></li>
-        <li className='cursor-pointer hover:underline duration-300 hover:text-purple-900 text-lg font-medium' onClick={handleCreateJobClick}>Create Job</li>
-        <li className='cursor-pointer hover:underline duration-300 hover:text-purple-900 text-lg font-medium'><Link to="/contact">Contact</Link></li>
+        <li className='cursor-pointer hover:underline duration-300 hover:text-purple-900 md:text-lg font-medium'><Link to="/">Jobs</Link></li>
+        <li className='cursor-pointer hover:underline duration-300 hover:text-purple-900 md:text-lg font-medium' onClick={handleCreateJobClick}>Create Job</li>
+        <li className='hidden md:block cursor-pointer hover:underline duration-300 hover:text-purple-900 text-lg font-medium'><Link to="/contact">Contact</Link></li>
     </ul>
 </div>
 

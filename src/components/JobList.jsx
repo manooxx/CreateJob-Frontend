@@ -37,7 +37,7 @@ const JobList = ({ url }) => {
                     {jobs.map((job) => (
                         <div
                             key={job._id}
-                            className="shadow-xl rounded-md py-5 px-5 flex justify-between items-center"
+                            className="shadow-xl rounded-md py-5 px-5 md:flex justify-between items-center"
                         >
                             <li>
                                 <h3 className="text-2xl font-semibold text-gray-700">
