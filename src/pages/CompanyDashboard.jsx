@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getJobsByCompany, deleteJob } from "../utils/api"; // Import delete function
+import { getJobsByCompany, deleteJob, getCompanyProfile } from "../utils/api"; // Import delete function
 
 import { useNavigate } from "react-router-dom";
 
@@ -13,7 +13,17 @@ const CompanyDashboard = () => {
 
     useEffect(() => {
         fetchJobs();
+        fetchCompanyProfile();
     }, []);
+
+    const fetchCompanyProfile = async () => {
+        try {
+            const profile = await getCompanyProfile();
+            setCompanyName(profile.name); 
+        } catch (err) {
+            console.error("Error fetching company profile:", err);
+        }
+    };
 
     const fetchJobs = async () => {
         try {

@@ -122,4 +122,22 @@ export const getJobsByCompany = async () => {
     }
   };
   
+  // Fetch logged-in company profile
+export const getCompanyProfile = async () => {
+    try {
+      const token = localStorage.getItem("token"); 
+      if (!token) throw new Error("No authentication token found");
+  
+      const response = await API.get("/auth/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+  
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || "Failed to fetch company profile");
+    }
+  };
+  
   
